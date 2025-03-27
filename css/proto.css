@@ -1,0 +1,11 @@
+html{
+  background-color: #86c5da;
+}
+
+a:link{
+  color: red;
+}
+
+a:hover{
+  color: orange;
+}
