@@ -1,5 +1,5 @@
 html{
-  background-color: #86c5da;
+  background-color: white;
 }
 
 a:link{
@@ -8,4 +8,9 @@ a:link{
 
 a:hover{
   color: orange;
+}
+
+.sketches{
+  height:400px;
+  width:400px;
 }
