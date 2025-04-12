@@ -109,12 +109,6 @@ closePopupBtn.addEventListener('click', () => {
     popup.style.display = 'none';
 });
 
-// window.addEventListener('click', (event) => {
-//     if (event.target === popup) {
-//         popup.style.display = 'none';
-//     }
-// });
-
 startExploringBtn.addEventListener('click', () => {
     // get all the nodes
     const nodes = document.querySelectorAll('.timeline-node');
