@@ -29,16 +29,37 @@ closeFilterPopup.addEventListener('click', () => {
 // Placeholder nodes for the timeline
 const timelineContainer = document.querySelector('.timeline-container');
 
-const events = [
-    { year: "1961", image: "comics/secretwars_2015.jpg"},
-    { year: "1963", image: "comics/secretwars_2015.jpg"},
-    { year: "1965", image: "comics/secretwars_2015.jpg"},
+// const events = [
+//     { year: "1961", image: "comics/secretwars_2015.jpg"},
+//     { year: "1963", image: "comics/secretwars_2015.jpg"},
+//     { year: "1965", image: "comics/secretwars_2015.jpg"},
+// ];
+
+const eventsData = [
+    {
+        title: "Secret Wars (1984)",
+        image: "comics/secretwars_2015.jpg",
+        summary: "The Beyonder pits the greatest heroes against their greatest foes.",
+        tags: ["Avengers", "Galactus", "Beyonder"]
+    },
+    {
+        title: "Infinity Gauntlet (1991)",
+        image: "comics/secretwars_2015.jpg",
+        summary: "With all six infinity stones in his gauntlet, Thanos snaps half of all life away.",
+        tags: ["Thanos", "Crossover"]
+    },
+    {
+        title: "Secret Wars (2015)",
+        image: "comics/secretwars_2015.jpg",
+        summary: "After the final incursion between Earth 616 and 1610....",
+        tags: ["Dr. Doom", "Mr. Fantastic", "Crossover"]
+    }
 ];
 
 function createTimeline(){
     const timelineContainer = document.querySelector('.timeline-container');
 
-    events.forEach((event, index) => {
+    eventsData.forEach((event, index) => {
         // Create the node for an event
         const node = document.createElement('div');
         node.classList.add('timeline-node');
@@ -68,33 +89,18 @@ function createTimeline(){
 
         // Append the node to the timeline
         timelineContainer.appendChild(node);
+
+        // Event listener for the popup
+        node.addEventListener('click', () => openPopup(index));
     });
 }
 
 // Call the function to create the timeline when page loads
 window.onload = createTimeline;
 
-const nodes = document.querySelectorAll('.timeline-node');
+// const nodes = document.querySelectorAll('.timeline-node');
 const popup = document.getElementById('popup');
 const closePopupBtn = document.getElementById('close-popup');
-
-const eventsData = [
-    {
-        title: "Secret Wars (1984)",
-        summary: "The Beyonder pits the greatest heroes against their greatest foes.",
-        tags: ["Avengers", "Galactus", "Beyonder"]
-    },
-    {
-        title: "Infinity Gauntlet (1991)",
-        summary: "With all six infinity stones in his gauntlet, Thanos snaps half of all life away.",
-        tags: ["Thanos", "Crossover"]
-    },
-    {
-        title: "Secret Wars (2015)",
-        summary: "After the final incursion between Earth 616 and 1610....",
-        tage: ["Dr. Doom", "Mr. Fantastic", "Crossover"]
-    }
-];
 
 function openPopup(eventIndex){
     const event = eventsData[eventIndex];
@@ -109,9 +115,9 @@ closePopupBtn.addEventListener('click', () => {
     popup.style.display = 'none';
 });
 
-nodes.forEach((node, index) => {
-    node.addEventListener('click', () => openPopup(index));
-});
+// nodes.forEach((node, index) => {
+//     node.addEventListener('click', () => openPopup(index));
+// });
 
 window.addEventListener('click', (event) => {
     if (event.target === popup) {
