@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="english">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Marvel Comics Timeline Explorer</title>
+        <link rel="stylesheet" href="./css/styleExplorer.css">
+    </head>
+
+    <body>
+        <!--Top Header Bar-->
+        <header>
+            <h1>Marvel Comics Timeline Explorer</h1>
+            <button id="help-btn">Help</button>
+        </header>
+
+        <!--Buttons-->
+        <div class="buttons">
+            <button id="start-exploring-btn">Start Exploring</button>
+            <button id="filter-btn">Filter</button>
+        </div>
+
+        
+        <!--Help Pop-Up Window-->
+        <div id="help-popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" id="close-help-popup">X</span>
+                <h2>How To Use</h2>
+                <p>Info on website navigation...</p>
+            </div>
+        </div>
+
+        <!--Filter Pop-Up Window-->
+        <div id="filter-popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" id="close-filter-popup">X</span>
+                <h2>Filters</h2>
+                <p>Filter options will display here.</p>
+            </div>
+        </div>
+
+        <!--Timeline-->
+        <section id="timeline">
+            <div class="timeline-line"></div>
+            <div class="timeline-container"></div>
+        </section>
+
+        <script src="./scripts/script.js"></script>
+    </body>
+</html>
