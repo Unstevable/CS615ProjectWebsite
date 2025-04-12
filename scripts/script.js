@@ -29,12 +29,6 @@ closeFilterPopup.addEventListener('click', () => {
 // Placeholder nodes for the timeline
 const timelineContainer = document.querySelector('.timeline-container');
 
-// const events = [
-//     { year: "1961", image: "comics/secretwars_2015.jpg"},
-//     { year: "1963", image: "comics/secretwars_2015.jpg"},
-//     { year: "1965", image: "comics/secretwars_2015.jpg"},
-// ];
-
 const eventsData = [
     {
         title: "Secret Wars (1984)",
@@ -115,12 +109,19 @@ closePopupBtn.addEventListener('click', () => {
     popup.style.display = 'none';
 });
 
-// nodes.forEach((node, index) => {
-//     node.addEventListener('click', () => openPopup(index));
+// window.addEventListener('click', (event) => {
+//     if (event.target === popup) {
+//         popup.style.display = 'none';
+//     }
 // });
 
-window.addEventListener('click', (event) => {
-    if (event.target === popup) {
-        popup.style.display = 'none';
-    }
+startExploringBtn.addEventListener('click', () => {
+    // get all the nodes
+    const nodes = document.querySelectorAll('.timeline-node');
+
+    // Choose one at random
+    const randomIndex = Math.floor(Math.random() * nodes.length);
+
+    // activate popup
+    openPopup(randomIndex);
 });
