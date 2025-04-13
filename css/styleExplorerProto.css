@@ -136,7 +136,7 @@ button:hover {
 
 .vertical-line-up,
 .vertical-line-down {
-  width: 2px;
+  width: 5px;
   background-color: black;
   position: absolute;
   left: 50%;
