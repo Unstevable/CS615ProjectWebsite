@@ -94,8 +94,15 @@ function createTimeline(){
     timelineLine.style.width = `${totalWidth}px`;
 }
 
-// Call the function to create the timeline when page loads
-window.onload = createTimeline;
+function showHelpPopup() {
+    helpPopup.style.display = 'block'; // Display the help pop-up
+}
+
+// Display the help pop-up when loading the page for the first time
+window.onload = () => {
+    createTimeline(); // and create the timeline
+    showHelpPopup();
+}
 
 // const nodes = document.querySelectorAll('.timeline-node');
 const popup = document.getElementById('popup');
