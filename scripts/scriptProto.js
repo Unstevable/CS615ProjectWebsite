@@ -28,17 +28,20 @@ closeFilterPopup.addEventListener('click', () => {
 
 // Placeholder nodes for the timeline
 const timelineContainer = document.querySelector('.timeline-container');
+const timelineLine = document.querySelector('.timeline-line'); // the actual timeline
+let totalWidth = window.innerWidth;
+const nodeWidth = 150;
 
 const eventsData = [
     {
         title: "Secret Wars (1984)",
-        image: "comics/secretwars_2015.jpg",
+        image: "comics/secretwars_1984.jpg",
         summary: "The Beyonder pits the greatest heroes against their greatest foes.",
         tags: ["Avengers", "Galactus", "Beyonder"]
     },
     {
         title: "Infinity Gauntlet (1991)",
-        image: "comics/secretwars_2015.jpg",
+        image: "comics/infinitygauntlet.jpg",
         summary: "With all six infinity stones in his gauntlet, Thanos snaps half of all life away.",
         tags: ["Thanos", "Crossover"]
     },
@@ -51,8 +54,6 @@ const eventsData = [
 ];
 
 function createTimeline(){
-    const timelineContainer = document.querySelector('.timeline-container');
-
     eventsData.forEach((event, index) => {
         // Create the node for an event
         const node = document.createElement('div');
@@ -86,7 +87,11 @@ function createTimeline(){
 
         // Event listener for the popup
         node.addEventListener('click', () => openPopup(index));
+        if (index >= 10){
+            totalWidth += nodeWidth;
+        }
     });
+    timelineLine.style.width = `${totalWidth}px`;
 }
 
 // Call the function to create the timeline when page loads
