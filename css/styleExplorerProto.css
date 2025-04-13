@@ -1,7 +1,13 @@
+@font-face {
+  font-family: 'Komyca';
+  src: url('../fonts/Komyca3DFreeVersionItalic-rg1WO.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
-  /* background-color: #f0f0f0; */
   overflow-x: auto;
   background-image: url('../comics/background-image.jpg');
   background-size: cover;
@@ -23,6 +29,7 @@ body::before {
 
 /* top header styling */
 header {
+  font-family: 'Komyca', sans-serif;
   display: flex;
   justify-content: space-between; /* space evenly distributed */
   align-items: center; /* vertically centers items */
@@ -65,6 +72,8 @@ header h1 {
 /* button style */
 
 button {
+  font-family: 'Komyca', sans-serif;
+  font-size: 20px;
   padding: 10px 20px;
   margin: 0;
   cursor: pointer;
