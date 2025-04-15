@@ -118,8 +118,10 @@
     justify-content: flex-start;
     position: relative;
     z-index: 10;
-    width: auto;
-    flex-wrap: nowrap;
+    width: 100%;
+    /* width: auto; */
+    /* flex-wrap: nowrap; */
+    white-space: nowrap;
   }
   
   .timeline-node {
@@ -129,7 +131,8 @@
     border-radius: 50%;
     position: relative;
     cursor: pointer;
-    margin-right: 300px; /* This is node spacing, and is ONLY this value for the prototype! (original value: 40px)*/
+    margin-right: 40px; /* This is node spacing */
+    left: 0;
   }
   
   .timeline-node .inner-circle {
