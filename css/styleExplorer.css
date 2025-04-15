@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'Komyca';
+    src: url('../fonts/Komyca3DFreeVersionItalic-rg1WO.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    background-image: url('../comics/background-image.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fxed;
+    background-repeat: repeat;
+  }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(107, 107, 107, 0.437);  /* Black overlay with 50% opacity */
+    z-index: -1; /* Place the overlay behind the content */
+  }
+  
+  /* top header styling */
+  header {
+    font-family: 'Komyca', sans-serif;
+    display: flex;
+    justify-content: space-between; /* space evenly distributed */
+    align-items: center; /* vertically centers items */
+    background-color: #1f1f1f;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,  
+    -1px 1px 0 #000,  
+    1px 1px 0 #000;  /* Black outline around text */
+  }
+  
+  header h1 {
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
+    margin-left: 20px;
+  }
+  
+  #help-btn {
+    background-color: #ff5500;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  /* buttons container */
+  .buttons {
+    display: flex;
+    justify-content: center; /* centers buttons horizontally */
+    gap: 20px; /* space between buttons */
+    margin-top: 20px; /* vertical space from header */
+  }
+  
+  /* button style */
+  
+  button {
+    font-family: 'Komyca', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    background-color: #ff5500;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-weight: bold;
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,  
+    -1px 1px 0 #000,  
+    1px 1px 0 #000;  /* Black outline around text */
+  }
+  
+  button:hover {
+    transform: scale(1.2); /* enlarged when hovering */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  #timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 60vh;
+    margin-top: 50px;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 10px;
+    background-color: black;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .timeline-container {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 10;
+    width: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .timeline-node {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    margin-right: 300px; /* This is node spacing, and is ONLY this value for the prototype! (original value: 40px)*/
+  }
+  
+  .timeline-node .inner-circle {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .vertical-line-up,
+  .vertical-line-down {
+    width: 5px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+  }
+  
+  .vertical-line-up {
+    height: 50px;
+    top: -50px;
+  }
+  
+  .vertical-line-down {
+    height: 50px;
+    top: 30px;
+  }
+  
+  .comic-cover-up,
+  .comic-cover-down {
+    position: absolute;
+    width: 100px;
+    height: 175px;
+    object-fit: cover;
+    z-index: 1;
+    border: 3px solid black;  /* Adds a black outline */
+  }
+  
+  .comic-cover-up {
+    top: -200px;
+  }
+  
+  .comic-cover-down {
+    bottom: -200px;
+  }
+  
+  .timeline-node:hover {
+    transform: scale(1.2); /* enlarged when hovering */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /*pop-up window styling*/
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  #popup-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #popup-summary {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  #popup-tags {
+    margin-top: 15px;
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .close-btn:hover {
+    transform: scale(1.2); /* enlarged when hovering */
+    transition: transform 0.2s ease-in-out;
+  }
