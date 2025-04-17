@@ -17,6 +17,12 @@ helpBtn.addEventListener('click', () => {
 
 filterBtn.addEventListener('click', () => {
     filterPopup.style.display = 'block';
+
+    const filterOptions = document.querySelectorAll('.filter-option');
+
+    filterOptions.forEach(option => {
+        option.checked = false;
+    });
 });
 
 // Close the windows
