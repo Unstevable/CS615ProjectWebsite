@@ -38,10 +38,12 @@ applyFiltersBtn.addEventListener('click', () => {
 
         const isMatch = selectedFilters.some(filter => eventTags.includes(filter));
 
+
+
         if (isMatch) {
             node.style.display = 'block';
         } else {
-            node.remove();
+            node.style.display = 'none';
         }
     });
 
