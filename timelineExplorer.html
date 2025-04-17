@@ -11,7 +11,7 @@
     <body>
         <!--Top Header Bar-->
         <header>
-            <h1>Marvel Comics Timeline Explorer (Prototype)</h1>
+            <h1>Marvel Comics Timeline Explorer</h1>
             <button id="help-btn">Help</button>
         </header>
 
@@ -41,8 +41,17 @@
         <div id="filter-popup" class="popup">
             <div class="popup-content">
                 <span class="close-btn" id="close-filter-popup">&times;</span>
-                <h2>Filters</h2>
-                <p>The filter options will be displayed here.  To be implemented in the future.</p>
+                <h2>Select Filters</h2>
+
+                <!--Filter options-->
+                <div id="filter-options">
+                    <label><input type="checkbox" class="filter-option" value="Avengers">Avengers</label><br>
+                    <label><input type="checkbox" class="filter-option" value="X-men">X-Men</label><br>
+                    <label><input type="checkbox" class="filter-option" value="Doctor Doom">Doctor Doom</label><br>
+                </div>
+
+                <!--Apply Filters Button-->
+                <button id="apply-filters-btn">Apply Filters</button>
             </div>
         </div>
 

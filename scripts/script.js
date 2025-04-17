@@ -6,6 +6,8 @@ const closeHelpPopup = document.getElementById('close-help-popup');
 const closeFilterPopup = document.getElementById('close-filter-popup');
 const helpPopup = document.getElementById('help-popup');
 const filterPopup = document.getElementById('filter-popup');
+const applyFiltersBtn = document.getElementById('apply-filters-btn');
+const timelineContainer = document.querySelector('.timeline-container');
 
 // Show the pop-up windows
 helpBtn.addEventListener('click', () => {
@@ -26,8 +28,27 @@ closeFilterPopup.addEventListener('click', () => {
     filterPopup.style.display = 'none';
 });
 
+applyFiltersBtn.addEventListener('click', () => {
+    const selectedFilters = Array.from(document.querySelectorAll('.filter-option:checked')).map(checkbox => checkbox.value);
+
+    const timelineNodes = Array.from(timelineContainer.querySelectorAll('.timeline-node'));
+
+    timelineNodes.forEach((node, index) => {
+        const eventTags = eventsData[index].tags;
+
+        const isMatch = selectedFilters.some(filter => eventTags.includes(filter));
+
+        if (isMatch) {
+            node.style.display = 'block';
+        } else {
+            node.remove();
+        }
+    });
+
+    filterPopup.style.display = 'none';
+});
+
 // Placeholder nodes for the timeline
-const timelineContainer = document.querySelector('.timeline-container');
 const timelineLine = document.querySelector('.timeline-line'); // the actual timeline
 let totalWidth = window.innerWidth;
 const nodeWidth = 150;
@@ -46,10 +67,28 @@ const eventsData = [
         tags: ["Thanos", "Crossover"]
     },
     {
+        title: "The Onslaught Saga",
+        image: "comics/onslaught.jpg",
+        summary: "After attempting to wipe the mind of Magneto, Charles Xavier accidentally created one of the X-Men's worst threats: Onslaught, the manifestation of the combined minds and powers of Magneto and Professor X.",
+        tags: ["Onslaught", "Crossover", "X-Men"]
+    },
+    {
+        title: "World War Hulk",
+        image: "comics/worldwarhulk.jpg",
+        summary: "After being forced off Earth by the Illuminati, the Incredible Hulk found himself as a gladiator who led a revolution on the planet Sakaar.  However, when the ship he was exiled on explodes and kills his newly found wife, the Incredible Hulk comes back to Earth for revenge.",
+        tags: ["Hulk", "Crossover", "Illuminati"]
+    },
+    {
+        title: "Avengers V.S. X-Men",
+        image: "comics/avengers_vs_xmen.jpg",
+        summary: "Avengers v.s. X-men",
+        tags: ["Avengers", "X-Men", "Crossover"]
+    },
+    {
         title: "Secret Wars (2015)",
         image: "comics/secretwars_2015.jpg",
         summary: "After the final incursion between Earth 616 and 1610....",
-        tags: ["Dr. Doom", "Mr. Fantastic", "Crossover"]
+        tags: ["Doctor Doom", "Mr. Fantastic", "Crossover"]
     }
 ];
 

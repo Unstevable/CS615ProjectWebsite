@@ -82,6 +82,7 @@
     color: rgb(255, 255, 255);
     border-radius: 5px;
     font-weight: bold;
+    border: 3px solid black;  /* Adds a black outline */
     text-shadow: 
     -1px -1px 0 #000,  
     1px -1px 0 #000,  
@@ -92,6 +93,38 @@
   button:hover {
     transform: scale(1.2); /* enlarged when hovering */
     transition: transform 0.2s ease-in-out;
+  }
+
+  #filter-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  #filter-options {
+    margin-top: 10px;
+  }
+
+  #filter-options label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #apply-filters-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff5500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
   #timeline {
@@ -131,7 +164,8 @@
     border-radius: 50%;
     position: relative;
     cursor: pointer;
-    margin-right: 40px; /* This is node spacing */
+    margin-right: 100px; /* This is node spacing */
+    margin-left: 10px;
     left: 0;
   }
   
