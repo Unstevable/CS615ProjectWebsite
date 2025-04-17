@@ -7,6 +7,7 @@ const closeFilterPopup = document.getElementById('close-filter-popup');
 const helpPopup = document.getElementById('help-popup');
 const filterPopup = document.getElementById('filter-popup');
 const applyFiltersBtn = document.getElementById('apply-filters-btn');
+const removeFiltersBtn = document.getElementById('remove-filters-btn');
 const timelineContainer = document.querySelector('.timeline-container');
 
 // Show the pop-up windows
@@ -46,6 +47,16 @@ applyFiltersBtn.addEventListener('click', () => {
     });
 
     filterPopup.style.display = 'none';
+    removeFiltersBtn.style.display = 'block';
+});
+
+removeFiltersBtn.addEventListener('click', () => {
+    const timelineNodes = Array.from(timelineContainer.querySelectorAll('.timeline-node'));
+
+    timelineNodes.forEach(node => {
+        node.style.display = 'block';
+    });
+    removeFiltersBtn.style.display = 'none';
 });
 
 // Placeholder nodes for the timeline
