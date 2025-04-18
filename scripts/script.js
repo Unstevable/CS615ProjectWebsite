@@ -167,8 +167,8 @@ const closePopupBtn = document.getElementById('close-popup');
 function openPopup(eventIndex){
     const event = eventsData[eventIndex];
     document.getElementById('popup-title').textContent = event.title;
-    document.getElementById('popup-summary').textContent = event.summary;
-    document.getElementById('popup-tags').textContent = `Tags: ${event.tags.join(', ')}`;
+    document.getElementById('popup-summary').textContent = `Summary: ${event.summary}`;
+    document.getElementById('popup-tags').textContent = `Characters: ${event.tags.join(', ')}`;
 
     popup.style.display = 'block';
 }
