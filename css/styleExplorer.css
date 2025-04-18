@@ -9,22 +9,13 @@
     margin: 0;
     padding: 0;
     overflow-x: auto;
-    background-image: url('../comics/background-image.jpg');
+    background-image: url('../comics/background_image.jpg');
     background-size: cover;
     background-position: center center;
-    background-attachment: fxed;
+    background-attachment: fixed;
     background-repeat: repeat;
-  }
-  
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(107, 107, 107, 0.437);  /* Black overlay with 50% opacity */
-    z-index: -1; /* Place the overlay behind the content */
+    position: relative;
+    min-height: 100vh;
   }
   
   /* top header styling */
@@ -164,7 +155,7 @@
     border-radius: 50%;
     position: relative;
     cursor: pointer;
-    margin-right: 100px; /* This is node spacing */
+    margin-right: 50px; /* This is node spacing */
     margin-left: 10px;
     left: 0;
   }
