@@ -118,7 +118,7 @@ const eventsData = [
         title: "Infinity Gauntlet (1991)",
         image: "comics/infinitygauntlet.jpg",
         summary: "Space. Power. Soul. Mind. Reality. Time. With all six infinity stones in his possession, Thanos, the Mad Titan, now omnipotent, snaps away half of the life in the universe in an attempt to impress Mistress Death.  Now, the remaining heroes band together in a final effort to stop him and set things right.",
-        tags: ["Crossover", "Thanos", "Adam Warlock", "Avengers", "X-Men", "Doctor Strange", "Silver Surfer", "Thor", "Hulk", "Captain America", "Iron Man", "Spider-Man", "Wolverine", "Scarlet Witch", "Namor", "Mephisto", "Galactus"]
+        tags: ["Crossover", "Thanos", "Adam Warlock", "Avengers", "X-Men", "Doctor Strange", "Silver Surfer", "Hulk", "Captain America", "Iron Man", "Spider-Man", "Scarlet Witch", "Namor", "Mephisto", "Galactus"]
     },
     {
         title: "Infinity War (1992)",
