@@ -68,7 +68,7 @@ removeFiltersBtn.addEventListener('click', () => {
 // Placeholder nodes for the timeline
 const timelineLine = document.querySelector('.timeline-line'); // the actual timeline
 let totalWidth = window.innerWidth;
-const nodeWidth = 60;
+const nodeWidth = 65;
 
 const eventsData = [
     {
@@ -112,13 +112,13 @@ const eventsData = [
         title: "Secret Wars (1984)",
         image: "comics/secretwars_1984.jpg",
         summary: "The Beyonder, a being from beyond the Multiverse, intrigued with the concepts of good and evil, teleport a group of Earth's heroes and villains to a location known as Battleworld to pit them against one another.",
-        tags: ["Crossover", "Spider-Man", "Avengers", "X-Men", "Fantastic Four", "Hulk", "Magneto", "Doctor Doom", "Ultron", "Kang the Conquerer", "Molecule Man", "Galactus"]
+        tags: ["Crossover", "Spider-Man", "Avengers", "X-Men", "Fantastic Four", "Hulk", "Magneto", "Doctor Doom", "Ultron", "Kang the Conquerer", "Galactus"]
     },
     {
         title: "Infinity Gauntlet (1991)",
         image: "comics/infinitygauntlet.jpg",
         summary: "Space. Power. Soul. Mind. Reality. Time. With all six infinity stones in his possession, Thanos, the Mad Titan, now omnipotent, snaps away half of the life in the universe in an attempt to impress Mistress Death.  Now, the remaining heroes band together in a final effort to stop him and set things right.",
-        tags: ["Crossover", "Thanos", "Adam Warlock", "Avengers", "X-Men", "Doctor Strange", "Silver Surfer", "Thor", "Hulk", "Captain America", "Iron Man", "Spider-Man", "Wolverine", "Cyclops", "Scarlet Witch", "Namor", "Mephisto"]
+        tags: ["Crossover", "Thanos", "Adam Warlock", "Avengers", "X-Men", "Doctor Strange", "Silver Surfer", "Thor", "Hulk", "Captain America", "Iron Man", "Spider-Man", "Wolverine", "Scarlet Witch", "Namor", "Mephisto", "Galactus"]
     },
     {
         title: "Infinity War (1992)",
@@ -133,10 +133,16 @@ const eventsData = [
         tags: ["Crossover", "X-Men", "Onslaught", "Avengers"]
     },
     {
+        title: "House of M",
+        image: "comics/houseofm.jpg",
+        summary: "Wanda Maximoff (Scarlet Witch) suffers from a mental break and loses control of her powers, which can alter reality how she pleases.  The Avengers and X-Men try to decide if Wanda must be killed, before her powers run rampant and destroy everyone.  Before they are able, Wanda creates an altered, fake reality world and brings everyone with her, with this new reality called the House of M.  When heroes memories begin to be restored, they go to confront her, where Magneto kills her brother, Quicksilver.  Wanda officially snaps, and declares \"No More Mutants\", where she seemingly \"rewrites\" reality back to what it once was, however now the mutant population is reduced by 90%.",
+        tags: ["Crossover", "Scarlet Witch", "Avengers", "X-Men", "Magneto"]
+    },
+    {
         title: "Civil War",
         image: "comics/civilwar.jpg",
         summary: "After the villain Nitro detonates himself and kills 600 people, including wiping out an entire elementary school, a national crisis develops - leading to the creation of the Superhuman Registration Act, where the government requires those with superhuman abilities to register their identities and work as agents of the government, otherwise they can no longer be superheroes.  This splits up the superhero community between those in favor of the Superhuman Registration Act, led by Iron Man, and those against it, led by Captain America.",
-        tags: ["Crossover", "Iron Man", "Captain America", "Spider-Man", "Ant Man", "Daredevil", "Avengers"]
+        tags: ["Crossover", "Iron Man", "Captain America", "Spider-Man", "Daredevil", "Avengers"]
     },
     {
         title: "World War Hulk",
@@ -154,19 +160,19 @@ const eventsData = [
         title: "Avengers V.S. X-Men",
         image: "comics/avengers_vs_xmen.jpg",
         summary: "After the events of House of M, the Pheonix Force attempts to return to Earth and possess itself within Hope Summers.  The Avengers believe that the Pheonix Force will bring death and destruction, while the X-Men believe it will be the key to restore the Mutant Kind.  This disagreement proves to be near apocalyptic when these groups begin fighting each other globally.",
-        tags: ["Crossover", "Avengers", "X-Men"]
+        tags: ["Crossover", "Avengers", "X-Men", "Namor"]
     },
     {
         title: "New Avengers (2013 - 2015)",
         image: "comics/newavengers.jpg",
         summary: "The multiverse is collapsing.  Incursions, an event where two Earths from separate universes are at risk of crashing into each other, are occurring en masse.  If neither of the Earths is able to destroy the other before collision, then both of those respective universes are destroyed.  This phenomenon has reached our main Earth, 616, and the Illuminati are faced with one of their hardest questions: should we destroy another Earth to save our own?",
-        tags: ["Avengers", "Doctor Doom", "Illuminati", "New Avengers"],
+        tags: ["Avengers", "Doctor Doom", "Illuminati", "New Avengers", "Namor"],
     },
     {
         title: "Infinity (2013)",
         image: "comics/infinity.jpg",
         summary: "Due to the presence of the Incursion phenomenon, ancient cosmic bringers of life known as the Builders decide that the Earth must be destroyed to preserve this universe.  While most of Earth's heroes are off-world fighting a cosmic war, Thanos decides to attack Earth with the help of his Black Order, in an effort to find and kill his son, Thane, whom he belives is on the planet.",
-        tags: ["Crossover", "Thanos", "The Black Order", "Avengers", "New Avengers", "Inhumans"]
+        tags: ["Crossover", "Thanos", "The Black Order", "Avengers", "New Avengers", "Inhumans", "Black Panther", "Doctor Strange"]
     },
     {
         title: "Spider-Verse (2014)",
@@ -178,7 +184,7 @@ const eventsData = [
         title: "Secret Wars (2015)",
         image: "comics/secretwars_2015.jpg",
         summary: "After the final incursion between Earth 616 and 1610, the multiverse seems to be on the verge of total collapse.  However, a now god-like Doctor Doom, with the power of the Beyonders, create a new world that exists on its own amongst the destroyed multiverse: Battleworld, where he rules as Emperor.  All surviving heroes live their lives on Battleworld, with no memory of the previous multiverse-but when certain heroes are awoken with the memory of what happened, they must figure out how to stop Doom and restore the multiverse.",
-        tags: ["Crossover", "Doctor Doom", "Fantastic Four", "Spider-Man (Miles Morales)", "Thanos", "The Maker", "Black Panther",]
+        tags: ["Crossover", "Doctor Doom", "Fantastic Four", "Spider-Man (Miles Morales)", "Thanos", "The Maker", "Black Panther", "Doctor Strange", "Molecule Man"]
     },
     {
         title: "Civil War II (2016)",
