@@ -166,7 +166,7 @@
     margin-right: 50px; /* This is node spacing */
     margin-left: 10px;
     left: 0;
-    min-width: 40px;
+    min-width: 40px; /*This min and max width allows the black node portion to not be squished when more nodes are added*/
     max-width: 40px;
   }
   
