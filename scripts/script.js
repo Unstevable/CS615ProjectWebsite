@@ -68,7 +68,7 @@ removeFiltersBtn.addEventListener('click', () => {
 // Placeholder nodes for the timeline
 const timelineLine = document.querySelector('.timeline-line'); // the actual timeline
 let totalWidth = window.innerWidth;
-const nodeWidth = 150;
+const nodeWidth = 60;
 
 const eventsData = [
     {
@@ -133,10 +133,22 @@ const eventsData = [
         tags: ["Crossover", "X-Men", "Onslaught", "Avengers"]
     },
     {
+        title: "Civil War",
+        image: "comics/civilwar.jpg",
+        summary: "After the villain Nitro detonates himself and kills 600 people, including wiping out an entire elementary school, a national crisis develops - leading to the creation of the Superhuman Registration Act, where the government requires those with superhuman abilities to register their identities and work as agents of the government, otherwise they can no longer be superheroes.  This splits up the superhero community between those in favor of the Superhuman Registration Act, led by Iron Man, and those against it, led by Captain America.",
+        tags: ["Crossover", "Iron Man", "Captain America", "Spider-Man", "Ant Man", "Daredevil", "Avengers"]
+    },
+    {
         title: "World War Hulk",
         image: "comics/worldwarhulk.jpg",
         summary: "After being forced off Earth by the Illuminati, the Incredible Hulk found himself as a gladiator who led a revolution on the planet Sakaar.  However, when the ship he was exiled on explodes and kills his newly found wife, the Incredible Hulk comes back to Earth for revenge.",
         tags: ["Crossover", "Hulk", "Illuminati", "X-Men", "Sentry", "Inhumans", "Avengers"]
+    },
+    {
+        title: "Secret Invasion",
+        image: "comics/secretinvasion.jpg",
+        summary: "The Skrulls, a shape-shifting alien race, has infiltrated Earth with hopes of taking control from within.  After \"Elektra\" is killed in battle, her body reverts to that of a Skrull, revealing that it was not the Elektra our heroes knew, and now everyone develops a sense of distrust.  What other heroes have been secretly Skrulls in disguise, how long have they been Skrulls, and how can they be stopped?",
+        tags: ["Crossover", "Avengers", "X-Men", "Fantastic Four"]
     },
     {
         title: "Avengers V.S. X-Men",
@@ -145,10 +157,52 @@ const eventsData = [
         tags: ["Crossover", "Avengers", "X-Men"]
     },
     {
+        title: "New Avengers (2013 - 2015)",
+        image: "comics/newavengers.jpg",
+        summary: "The multiverse is collapsing.  Incursions, an event where two Earths from separate universes are at risk of crashing into each other, are occurring en masse.  If neither of the Earths is able to destroy the other before collision, then both of those respective universes are destroyed.  This phenomenon has reached our main Earth, 616, and the Illuminati are faced with one of their hardest questions: should we destroy another Earth to save our own?",
+        tags: ["Avengers", "Doctor Doom", "Illuminati", "New Avengers"],
+    },
+    {
+        title: "Infinity (2013)",
+        image: "comics/infinity.jpg",
+        summary: "Due to the presence of the Incursion phenomenon, ancient cosmic bringers of life known as the Builders decide that the Earth must be destroyed to preserve this universe.  While most of Earth's heroes are off-world fighting a cosmic war, Thanos decides to attack Earth with the help of his Black Order, in an effort to find and kill his son, Thane, whom he belives is on the planet.",
+        tags: ["Crossover", "Thanos", "The Black Order", "Avengers", "New Avengers", "Inhumans"]
+    },
+    {
+        title: "Spider-Verse (2014)",
+        image: "comics/spiderverse.jpg",
+        summary: "The Inheritors, a family of powerful, vampiric beings, are traversing the multiverse to hunt down and consume the life forces of all beings connected to the Spider-Totem—individuals across realities who possess spider-like abilities. Their goal: to eradicate every Spider-person in existence. To combat this existential threat, Spider-heroes from various universes band together, forming an unprecedented alliance to fight back and protect the multiverse.",
+        tags: ["Spider-Man", "Spider-Man (Miles Morales)", "Spider-Gwen", "Spider-Man 2099"]
+    },
+    {
         title: "Secret Wars (2015)",
         image: "comics/secretwars_2015.jpg",
         summary: "After the final incursion between Earth 616 and 1610, the multiverse seems to be on the verge of total collapse.  However, a now god-like Doctor Doom, with the power of the Beyonders, create a new world that exists on its own amongst the destroyed multiverse: Battleworld, where he rules as Emperor.  All surviving heroes live their lives on Battleworld, with no memory of the previous multiverse-but when certain heroes are awoken with the memory of what happened, they must figure out how to stop Doom and restore the multiverse.",
         tags: ["Crossover", "Doctor Doom", "Fantastic Four", "Spider-Man (Miles Morales)", "Thanos", "The Maker", "Black Panther",]
+    },
+    {
+        title: "Civil War II (2016)",
+        image: "comics/civilwartwo.jpg",
+        summary: "The Marvel Universe is torn apart when a new Inhuman, Ulysses, emerges with the ability to predict future events with high accuracy. His visions include disasters, attacks, and crimes yet to be committed.  This leads to another split among heroes: one faction led by Iron Man, who believes in people having free will and the ability to control themselves and not fufill Ulysses's visions, and the other faction, led by Captain Marvel, who believes in detaining the people in Ulysses's visions to prevent the tragedies from happening.",
+        tags: ["Crossover", "Iron Man", "Captain Marvel", "Spider-Man (Miles Morales)", "Avengers"]
+    },
+    {
+        title: "Secret Empire (2017)",
+        image: "comics/secretempire.jpg",
+        summary: "Steve Rogers (Captain America) has secretly been reprogrammed by the Red Skull and the sentient Cosmic Cube named Kobik to believe he has been a lifelong agent of Hydra.  Using his intelligence, leadership, and the trust of the superhero community, Hydra-Cap orchestrates a takeover of the United States, becoming the Supreme Leader of Hydra and plunging the Marvel Universe into its darkest timeline.",
+        tags: ["Crossover", "Captain America", "Captain America (Sam Wilson)", "Spider-Man (Miles Morales)", "Iron Man", "Avengers"]
+    },
+    {
+        title: "Devil's Reign",
+        image: "comics/devilsreign.jpg",
+        summary: "As the Mayor of New York City, Wilson Fisk passes sweeping legislation that outlaws all superhero activity within the city. Using his political power and a super-powered police force, Fisk launches a full-blown crusade to arrest and unmask heroes, blaming them for chaos and corruption in the city.",
+        tags: ["Crossover", "Kingpin", "Daredevil", "Captain America", "Spider-Man", "Moon Knight", "Iron Man"]
+    },
+    {
+        title: "Avengers V.S. X-Men V.S. Eternals: Judgement Day",
+        image: "comics/judgementday.jpg",
+        summary: "The Eternals have discovered a disturbing truth: mutants, through resurrection on Krakoa, now defy death—a concept the Eternals were programmed to eliminate in “excess deviation.”  Led by Druig, the new Eternal Prime, the Eternals declare war on mutantkind, labeling the X-Men as Deviants and launching an attack on Krakoa and Arakko.  In response, the Avengers, Eternals, and X-Men are pulled into a conflict that spirals into cosmic judgment—when a Celestial god is resurrected to serve as the judge of humanity itself.",
+        tags: ["Crossover", "Avengers", "X-Men", "Eternals"]
     }
 ];
 

@@ -8,6 +8,7 @@
   body {
     margin: 0;
     padding: 0;
+    padding-top: 70px;
     overflow-x: auto;
     background-image: url('../comics/background_image.jpg');
     background-size: cover;
@@ -33,6 +34,9 @@
     1px -1px 0 #000,  
     -1px 1px 0 #000,  
     1px 1px 0 #000;  /* Black outline around text */
+    top: 0;
+    left: 0;
+    position: fixed;
   }
   
   header h1 {
@@ -162,6 +166,8 @@
     margin-right: 50px; /* This is node spacing */
     margin-left: 10px;
     left: 0;
+    min-width: 40px;
+    max-width: 40px;
   }
   
   .timeline-node .inner-circle {
